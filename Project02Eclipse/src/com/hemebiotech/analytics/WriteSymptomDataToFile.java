@@ -4,11 +4,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 import java.util.logging.Level;
-
 import java.util.logging.Logger;
 
 
-public class WriteSymptomDataToFile implements ISymptomWriter{
+public class WriteSymptomDataToFile implements ISymptomWriter {
 
     private static final Logger logger = Logger.getLogger(WriteSymptomDataToFile.class.getName());
     private final String filePath;
