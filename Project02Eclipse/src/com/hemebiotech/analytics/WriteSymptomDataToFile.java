@@ -13,18 +13,18 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
     private final String filePath;
 
     /**
-     * @param filePath a full or partial path to file with symptom count data
+     * @param filePath un chemin vers le fichier contenant les données de comptage des symptômes
      */
     public WriteSymptomDataToFile(String filePath) {
         this.filePath = filePath;
     }
 
     /**
-     * Writes the symptom data to a file.
-     * Each symptom and its count are written on a new line in the format "symptom: count".
+     * Écrit les données des symptômes dans un fichier.
+     * Chaque symptôme et son décompte sont inscrits sur une nouvelle ligne au format « symptôme : décompte ».
      *
-     * @param symptoms a map containing symptom names as keys and their counts as values
-     * @throws RuntimeException if an IOException occurs during file writing
+     * @param symptoms une map contenant les noms des symptômes comme clés et leur nombre comme valeurs
+     * @throws RuntimeException si une erreur se produit pendant l'écriture du fichier
      */
     @Override
     public void writeSymptoms(Map<String, Integer> symptoms) {
@@ -32,9 +32,9 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
             for (Map.Entry<String, Integer> entry : symptoms.entrySet()) {
                 writer.write(entry.getKey() + ": " + entry.getValue() + "\n");
             }
-            logger.info("Symptoms successfully written to file: " + filePath);
+            logger.info("Les symptômes ont été enregistrés avec succès dans le fichier : " + filePath);
         } catch (IOException e) {
-            logger.log(Level.SEVERE, "An error occurred while writing symptoms to file: " + filePath, e);
+            logger.log(Level.SEVERE, "Une erreur s'est produite lors de l'écriture des symptômes dans le fichier : " + filePath, e);
         }
     }
 }
