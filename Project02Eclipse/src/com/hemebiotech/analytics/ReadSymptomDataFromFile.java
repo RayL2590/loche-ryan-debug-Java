@@ -23,7 +23,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
      * @return Une liste de tous les symptômes lus dans le fichier
      */
     @Override
-    public List<String> GetSymptoms() {
+    public List<String> getSymptoms() {
         ArrayList<String> result = new ArrayList<String>();
 
         if (filepath != null) {
@@ -40,7 +40,6 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
                 e.printStackTrace();
             }
         }
-
         return result;
     }
 

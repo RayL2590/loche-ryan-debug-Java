@@ -15,5 +15,5 @@ public interface ISymptomReader {
      * @return Une liste brute de tous les symptômes obtenus à partir de la source de données.
      * Des doublons sont possibles et probables dans cette liste.
      */
-    List<String> GetSymptoms();
+    List<String> getSymptoms();
 }

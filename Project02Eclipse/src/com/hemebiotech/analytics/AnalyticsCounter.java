@@ -35,7 +35,7 @@ public class AnalyticsCounter {
      * @return Une liste de chaînes de caractères représentant les symptômes
      */
     public List<String> getSymptoms() {
-        return reader.GetSymptoms();
+        return reader.getSymptoms();
     }
 
     /**
@@ -48,7 +48,8 @@ public class AnalyticsCounter {
         Map<String, Integer> symptomCount = new TreeMap<>();
         for (String symptom : symptoms) {
             // Si le symptôme existe déjà, on incrémente son compteur, sinon on l'initialise à 1
-            symptomCount.put(symptom, symptomCount.getOrDefault(symptom, 0) + 1);
+            //symptomCount.put(symptom, symptomCount.getOrDefault(symptom, 0) + 1);
+            symptomCount.compute(symptom, (key, value) -> (value == null) ? 1 : value + 1);
         }
         return symptomCount;
     }
